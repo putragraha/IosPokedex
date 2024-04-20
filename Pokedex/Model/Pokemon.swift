@@ -8,7 +8,7 @@
 import Foundation
 
 struct Pokemon: Codable, Identifiable, Equatable {
-    var id = UUID()
+    let id = UUID()
     let name: String
     let url: String
 }
