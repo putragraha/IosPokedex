@@ -9,11 +9,11 @@ import Foundation
 
 final class PokemonViewModel: ObservableObject {
     
-    @Published var pokemons = [Pokemon]()
-    
     @Published var pokemonDetail: PokemonDetail?
     
     @Published var searchText = ""
+    
+    private var pokemons = [Pokemon]()
     
     var filteredPokemons: [Pokemon] {
         return searchText == "" ? pokemons : pokemons.filter { pokemon in
@@ -23,7 +23,6 @@ final class PokemonViewModel: ObservableObject {
     
     init() {
         self.pokemons = getPokemons()
-        print(self.pokemons)
     }
     
     func getPokemonDetail(pokemon: Pokemon) {
